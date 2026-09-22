@@ -1,10 +1,5 @@
 name: Basic Commands
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+on: [push]
 jobs:
   demo commands :
     runs-on: ubuntu-latest
@@ -23,6 +18,7 @@ jobs:
             echo "this is a demo file "> demo.txt
             cat demo.txt
 
-      - name: |
+      - name: run python program
+         run: |
              echo 'print ("hello world!")' hello.py
              python3 hello.py 
